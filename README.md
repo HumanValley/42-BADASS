@@ -12,11 +12,13 @@ Setup Virtual Machine, install GNS3 and use docker images to simulate computers 
 
 ### P2
 
-Setup a VXLAN network in GNS3 using bridges and P1's docker images. Open P2.drawio.html for configuration diagram. 
+Setup a VXLAN network in GNS3 using bridges and P1's docker images.
+*Open P2.drawio.html for configuration diagram.*
 
 ### P3
 
-Setup A BGP EVPN using P2's VXLAN. Open P3.drawio.html for configuration diagram. 
+Setup A BGP EVPN using P2's VXLAN.
+*Open P3.drawio.html for configuration diagram.* 
 
 ## Knowledge
 
