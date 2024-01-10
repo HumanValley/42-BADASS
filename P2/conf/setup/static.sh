@@ -3,7 +3,11 @@
 ip addr add $router_ip/24 dev eth0
 
 # vxlan (router vxlan <-> other router vxlan)
-ip link add name vxlan10 type vxlan id 10 dev eth0 remote $other_router_ip local $router_ip dstport 4789
+ip link add name vxlan10 type vxlan id 10 \
+    dev eth0 \
+    remote $other_router_ip \
+    local $router_ip \
+    dstport 4789
 ip addr add $vxlan_ip/24 dev vxlan10
 ip link set dev vxlan10 up
 
