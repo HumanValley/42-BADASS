@@ -1,7 +1,7 @@
 #!/bin/sh
 
-interface_to_router=eth1
-interface_to_host=eth0
+# $1 eth address
+# $2 loopback address
 
 touch /etc/frr/vtysh.conf
 
@@ -12,7 +12,7 @@ ip link set dev vxlan10 up
 # bridge (ethernet of host <-> router vxlan)
 ip link add br0 type bridge
 ip link set dev br0 up
-brctl addif br0 $interface_to_host
+brctl addif br0 eth1
 brctl addif br0 vxlan10
 
 vtysh << EOF
@@ -21,12 +21,12 @@ conf t
 hostname $(hostname)
 no ipv6 forwarding
 !
-interface $interface_to_router
- ip address $eth_ip/30
+interface eth0
+ ip address $1/30
  ip ospf area 0
 !
 interface lo
- ip address $lo_ip/32
+ ip address $2/32
  ip ospf area 0
 !
 router bgp 1
