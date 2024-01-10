@@ -1,7 +1,8 @@
 p1:
 	sh ./P1/clean.sh
-	sh ./P1/build.sh
+	cd P1 && sh ./build.sh
 
 p2:
-	sh ./P2/inject.sh
+	cd P2 && sh ./inject.sh
 
+p3:
