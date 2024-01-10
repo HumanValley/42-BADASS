@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ip addr add 20.1.1.3/24 dev eth0
+ip link set eth0 up
